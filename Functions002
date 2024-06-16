@@ -1,0 +1,20 @@
+//SPDX-License-Identifier: MIT
+pragma solidity 0.8.7;
+
+contract funcPlayground {
+
+    uint256 storedData;
+    function viewFucn () internal view returns (uint256) {
+        return storedData;
+    }
+
+    function pureFunc (uint256 i, uint256 j) internal pure returns (uint256){
+        return i + j;
+    }
+
+    uint256 balance; uint256 unreadInbox;
+    function payableFunc () public payable {
+        unreadInbox = msg.value; //the amount of ether recieved
+        balance += unreadInbox;
+    }
+}
